@@ -8,94 +8,6 @@ import pandas as pd
 
 logging.basicConfig(filename="gitsawLog.log", level=logging.DEBUG)
 
-# data = {
-#     'col1': [10, 20, 30],
-#     'col2': ['A', 'B', 'C']
-# }
-
-# print(data)
-
-# df = pd.DataFrame(data)
-
-# print(df.to_json())
-# df.to_json('example_json.json')
-
-# example_dictionary = {'name': ["Rich", "Ollie", "Chris", "Zakiya", "Ben", "Steph", "Gabe"],
-# 'age (guess)': [35, 29, 37, 24, 37, 24, 24],
-# 'designation': ["Head of US", "Head Teach", "DataHead", "Talent", "Instructor", "A. Instructor", "A. Instructor"]}
-
-# df = pd.DataFrame(example_dictionary)
-
-# print(example_dictionary)
-
-# print(" ")
-
-# print(df)
-
-# df.to_csv('csv_example.csv', index=False)
-
-# df_csv = pd.read_csv('csv_example.csv')
-
-# print(df_csv)
-
-
-# headers = ['Name', 'age (guess)']
-# data = [['Alex', 25], ['Brad', 30], ['Joey', 18]]
-
-# with open('prey.csv', mode='w', newline='') as csvfile:
-#     writer = csv.DictWriter(csvfile, fieldnames=headers)
-
-#     writer.writeheader()
-#     for student in data:
-#         writer.writerow({'Name': student[0], 'age (guess)': student[1]})
-
-# rows = []
-# with open('prey.csv', newline='') as csvfile:
-#     reader = csv.DictReader(csvfile)
-#     print(["Name"], ["email"])
-#     for row in reader:
-#         print(row["Name"], row["email"])
-
-# header = ['Name', 'age', 'location']
-# data = [['Alex', 25, 'usa'], ['Brad', 30, 'canada'], ['Joey', 10, 'australia']]
-# with open ('git_saw.csv', mode='w', newline='') as csvfile:
-#     csvwriter = csv.writer(csvfile)
-#     csvwriter.writerow(header)
-#     csvwriter.writerows(data)
-
-# rows = []
-# with open('prey.csv', newline='') as csvfile:
-#     csvreader = csv.reader(csvfile)
-#     header = next(csvreader)
-#     for row in csvreader:
-#         rows.append(row)
-
-# print(f"The headers are: {header}")
-# print(rows)
-# print("current directory: ", os.getcwd())
-# os.mkdir("mydir")
-
-# os.chdir("mydir")
-# os.remove("newfile.text")
-# os.rename("myfile.text", "newfile.text")
-
-# with open("myfile.text", mode="w", encoding="utf-8") as my_file:
-#     my_file.write("Some text\nMore text\nEven more\nMOAR")
-
-# with open("myfile.text", encoding="utf-8") as my_file:
-#     print(my_file.read())
-
-#     print(my_file.name)
-#     print(my_file.mode)
-# with open("newfile.text", encoding="utf-8") as my_file:
-#    line_num = 1
-#    while True:
-#        line = my_file.readline()
-#        if not line:
-#            break
-#        print("Line # : ", line_num, "|", line, end="")
-#        line_num += 1
-
 
 class Player:
     def __init__(self, name, turns):
@@ -136,12 +48,16 @@ def introduction():
     print("..:  do something about it?                                                :..")
     print("..:                                                                        :..")
     print("..::....::....::....::....::....::....::....::....::....::....::....::....::..")
-    choice = input("Make your choice (live or die) ")
     print("                                                                              ")
-    newPlayername = input("Enter Your Name If You Dare ")
+    choice = input("Make your choice [Type 'live' or 'die'] ")
+    print("                                                                              ")
+    print("                                                                              ")
+    newPlayername = input(" Enter Your Name If You Dare!!! ")
     global newPlayer
     newPlayer = Player(newPlayername, 10)
-    choice = input(f"Want to play a game?  {newPlayer.name}? Yes or No ")
+    print("                                                                              ")
+    choice = input(
+        f"Want to play a game?  {newPlayer.name}? [Type 'yes' or 'no'] ")
     print("                                                                              ")
     if choice.lower() == 'yes':
         logging.info(f"Let The Game Begin {datetime.datetime.now()}")
@@ -171,7 +87,8 @@ def the_tub():
     print("..:                                                                        :..")
     print("..::....::....::....::....::....::....::....::....::....::....::....::....::..")
     print("                                                                              ")
-    choice = input("Sit Up and Grasp for Air(x) or Lay There(y) [type x or y]")
+    choice = input(
+        "Sit Up and Grasp for Air(x) or Lay There(y) [ Type 'x' or 'y' ] ")
     print("                                                                              ")
     if choice.lower() == 'x':
         logging.info(
@@ -189,7 +106,8 @@ def the_tub():
         print("..:                                                                    :..")
         print("..::....::....::....::....::....::....::....::....::....::....::....::.:..")
     elif choice.lower() == 'y':
-        choice = input("Want to Play Again? ")
+        choice = input(
+            "Tisk, Tisk... While I am certain that there is a desire to point fingers at me for you drowning, I assure you I'm not the one that will be judged, you will. GAME OVER!!!! Will you risk that chance to play again? ['yes' or 'no'? ] ")
         print("                                                                          ")
         introduction()
 
@@ -203,7 +121,7 @@ def chain_leg():
     print("..:      Choose to PLAY the tape or Suffer the consequences!           :..")
     print("..::....::....::....::....::....::....::....::....::....::....::....::.:..")
     print("                                                                          ")
-    choice = input("Play or Suffer? ")
+    choice = input("Play or Suffer? [ Type 'play' or 'suffer' ]")
     print("                                                                          ")
     if choice.lower() == 'play':
         logging.info(
@@ -260,20 +178,26 @@ def suffer_alone():
     print("..:                                                                        :..")
     print("..::....::....::....::....::....::....::....::....::....::....::....::....::..")
     print("                                                                              ")
-    choice = input("Saw Your Foot Off or Search For A Key ")
+    choice = input("Saw Your Foot Off or Search For A Key  ['saw' or 'key'] ")
     print("                                                                              ")
     if choice.lower() == 'saw':
         logging.info(
-            f"You choose to saw your foot off {datetime.datetime.now()}")
+            f"You chose to saw your foot off {datetime.datetime.now()}")
         print(
             "..::....::....::....::....::....::....::....::....::....::....::....::....::..")
         print(
-            "..:   Oh no! You sawed your foot off and bleed to death!                   :..")
+            "..:                                                                      :..")
         print(
-            "..::....::....::....::....::....::....::....::....::....::....::....::....::..")
-        # time.sleep(1)
-        # newPlayer.turns -= 1
-        # newPlayer.checkTurns(newPlayer.turns)
+            "..:     Oh no! You sawed off your foot and bleed to death!               :..")
+        print(
+            "..:                          GAME OVER!!!!                               :..")
+        print(
+            "..::....::....::....::....::....::....::....::....::....::....::....::...:..")
+        print(
+            "                                                                            ")
+        time.sleep(5)
+        newPlayer.turns -= 1
+        newPlayer.checkTurns(newPlayer.turns)
         introduction()
     elif choice.lower() == 'key':
         logging.info(
@@ -286,7 +210,7 @@ def suffer_alone():
             "                                                                              ")
         choice = input("saw or key? ")
         logging.info(
-            f"You choose to saw off your foot {datetime.datetime.now()}")
+            f"You chose to saw off your foot {datetime.datetime.now()}")
         if choice.lower() == 'saw':
             time.sleep(1)
             newPlayer.turns -= 1
@@ -294,7 +218,7 @@ def suffer_alone():
             chain_leg
         elif choice.lower() == 'key':
             logging.info(
-                f"You choose to play the tape {datetime.datetime.now()}")
+                f"You chose to play the tape {datetime.datetime.now()}")
             time.sleep(1)
             tape_of_clues()
 
@@ -309,13 +233,14 @@ def tape_of_clues():
     print("..:   pull the handle on the wall and you will be set free!                :..")
     print("..:                                                                        :..")
     print("..::....::....::....::....::....::....::....::....::....::....::....::....::..")
+    print("                                                                              ")
     choice = input(
-        "Pull the handle or search for options? [type 'handle' or 'options' ")
+        "Pull the handle or search for options? [type 'handle' or 'options' ] ")
     print("                                                                              ")
     if choice.lower() == 'handle':
         logging.info(
             f"You chose to pull the handle to escape {datetime.datetime.now()}")
-    print("..:  Pull the handle and free yourself! Beware of the blades :..")
+    # print("..:  Pull the handle and free yourself! Beware of the blades :..")
     time.sleep(1)
     newPlayer.turns -= 1
     newPlayer.checkTurns(newPlayer.turns)
@@ -337,14 +262,14 @@ def tape_of_clues():
         choice = input("options or handle? ")
     if choice.lower() == 'handle':
         logging.info(
-            f"You choose to reach for the handle {datetime.datetime.now()}")
+            f"You chose to reach for the handle {datetime.datetime.now()}")
         time.sleep(1)
         newPlayer.turns -= 1
         newPlayer.checkTurns(newPlayer.turns)
         suffer_alone()
     elif choice.lower() == 'options':
         logging.info(
-            f"You choose to look for other options to escape {datetime.datetime.now()}")
+            f"You chose to look for other options to escape {datetime.datetime.now()}")
         print("..::....::....::....::....::....::....::....::....::....::....::....::....::....")
         print("..:                                                                          :..")
         print("..:Time's Up! You Played a Good Game but Not Good Enough to Value Your Life! :..")
@@ -357,14 +282,14 @@ def tape_of_clues():
         print("Type 'option' or 'handle' ")
         if choice.lower() == 'handle':
             logging.info(
-                f"You choose to reach for the handle {datetime.datetime.now()}")
+                f"You chose to reach for the handle {datetime.datetime.now()}")
             time.sleep(1)
             newPlayer.turns -= 1
             newPlayer.checkTurns(newPlayer.turns)
             suffer_alone()
         elif choice.lower() == 'options':
             logging.info(
-                f"You choose to look for other options to escape {datetime.datetime.now()}")
+                f"You chose to look for other options to escape {datetime.datetime.now()}")
             print(
                 "..::....::....::....::....::....::....::....::....::....::....::....::....::....")
             print(
@@ -388,6 +313,7 @@ def the_handle():
     print("..:         Will you pull the switch or saw your foot off to escape?         :..")
     print("..:                                                                          :..")
     print("..::....::....::....::....::....::....::....::....::....::....::....::....::....")
+    print("                                                                              ")
     choice = input(
         "Saw Off Your Foot or Try to Reach for the Switch  [type 'foot' or 'switch'] ? ")
     print("                                                                                ")
@@ -401,6 +327,8 @@ def the_handle():
         print("..:  You value Obssession more than life! Game Over!                         :..")
         print("..:                                                                          :..")
         print("..::....::....::....::....::....::....::....::....::....::....::....::....::....")
+        print(
+            "                                                                              ")
         choice = input("Want to Play Again? [type 'yes' or 'no'] ")
         print("                                                                                ")
         # time.sleep()
