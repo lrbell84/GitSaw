@@ -8,12 +8,12 @@ Install Vagrant.
 Install VirtualBox.
 Download this repository as a zip archive and unzip it. Note the folder you unzip it into.
 Open a terminal (of your choice) and change to the folder from the last step. (Use the cd command.) You're in the right place if, when you enter ls and press Return, you see Vagrantfile among those listed.
-Enter the command: vagrant box add ubuntu/trusty64 and press Return.
+Enter the command: vagrant box add generic/ubuntu2010 and press Return.
 Enter the command: vagrant up and press Return. Now begins a long process of downloading and installing software. This will require a large amount of disk space and time to complete (on my machine, it took about 5GB and about an hour of downloading and installing). You will know it is finished when you get a new command prompt (and hopefully no error messages).
 TestingOpen your web browser and visit http://localhost:3010. You should see an GitSaw login screen. Enter username vagrant and password vagrant and log in.
 Type the following command into the left-side pane (the R console): source("/vagrant/test/test.R") and press Return. You should see a few messages, and then a final message reading Looks okay.
-In GitSaw's File menu, choose "Open." Enter the following path: /vagrant/test/test.pdf. A PDF file should open up in your web browser. It should look like this file.
-Close the window. Click "Sign Out" on the upper right of the RStudio window.
+In GitSaw's File menu, choose "Open." A file should open up in your web browser. It should look like this file.
+Close the window. Click "Sign Out" on the upper right of the GitSaw window.
 Enter vagrant destroy and press Return.
 Starting and stopping the virtual machine
 Before you can use GiitSaw in your web browser, you have to start the virtual machine. That is what vagrant up does. (It's much faster after the first time, because there's no new software to install.) Once you are done working, you will want to reclaim the (large) amount of RAM required to run all this software locally. That is the purpose of the command vagrant destroy.
